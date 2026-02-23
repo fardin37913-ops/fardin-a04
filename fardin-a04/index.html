@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal Dashboard</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="dashboard">
+            <h1>Job Application Tracker</h1>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <p>Total</p>
+                    <h2 id="total-count">0</h2>
+                </div>
+                <div class="stat-box">
+                    <p>Interview</p>
+                    <h2 id="interview-count" class="text-green">0</h2>
+                </div>
+                <div class="stat-box">
+                    <p>Rejected</p>
+                    <h2 id="rejected-count" class="text-red">0</h2>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="section-title-bar">
+                <h2>Available Jobs</h2>
+                <p class="count-text"><span id="tab-count">0</span> Jobs</p>
+            </div>
+
+            <div class="tabs">
+                <button onclick="switchTab('all')" id="tab-all" class="tab-btn active">All</button>
+                <button onclick="switchTab('interview')" id="tab-interview" class="tab-btn">Interview</button>
+                <button onclick="switchTab('rejected')" id="tab-rejected" class="tab-btn">Rejected</button>
+            </div>
+
+            <div id="job-container"></div>
+
+            <div id="empty-state" class="hidden">
+                <img src="./images/assignment_7959593 1.png" alt="No jobs available" class="empty-img">
+                <h3>No jobs Available</h3>
+                <p>Check back soon for new job opportunities</p>
+            </div>
+        </main>
+    </div>
+
+    <template id="job-card-template">
+        <div class="job-card">
+            <button class="delete-btn">
+                <img src="./images/Group 1.png" alt="Delete">
+            </button>
+            <div class="status-badge"></div>
+            <h3 class="company-name"></h3>
+            <p class="position-text"></p>
+            <p class="info-row"></p>
+            <p class="desc"></p>
+            <div class="actions">
+                <button class="btn btn-int">Interview</button>
+                <button class="btn btn-rej">Rejected</button>
+            </div>
+        </div>
+    </template>
+
+    <script src="./script.js"></script>
+</body>
+</html>
